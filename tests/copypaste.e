@@ -3,10 +3,32 @@
 // february 12, 2015
 
 start		cpfa val arr i
+		cpta val new i 
+		add i i one
+		bne start i fifteen	
 		halt
 
 i	.data	0 
-val	.data	0
+fifteen	.data	15
+one	.data	1
+val	.data	105
+new	.data	0 //new 0 
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0 //new 10
+	.data	0
+	.data	0
+	.data	0
+	.data	0
+	.data	0 //new 15
+	.data   0
 arr	.data	10 //arr 0
 	.data	20
 	.data	30
