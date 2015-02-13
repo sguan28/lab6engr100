@@ -5,11 +5,11 @@
 start		cpfa val arr i
 		cpta val new i 
 		add i i one
-		bne start i ten	
+		bne start i fifteen	
 		halt
 
 i	.data	0 
-ten	.data	10
+fifteen	.data	15
 one	.data	1
 val	.data	105
 new	.data	0 //new 0 
