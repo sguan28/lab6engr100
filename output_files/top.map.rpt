@@ -1,0 +1,231 @@
+Analysis & Synthesis report for top
+Thu Feb 12 22:15:08 2015
+Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Thu Feb 12 22:15:08 2015           ;
+; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name                      ; top                                         ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                   ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                   ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; top                ; top                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-24        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Thu Feb 12 22:15:04 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Info (11104): Parallel Compilation has detected 24 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 12 of the 12 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10034): Output port "LED_RED" at top.v(9) has no driver
+Warning (10034): Output port "LED_GREEN[7..0]" at top.v(10) has no driver
+Info (12128): Elaborating entity "control" for hierarchy "control:u46"
+Error (12006): Node instance "u1" instantiates undefined entity "clocks" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 86
+Error (12006): Node instance "u2" instantiates undefined entity "reset_toggle" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 89
+Error (12006): Node instance "u3" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 91
+Error (12006): Node instance "u4" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 92
+Error (12006): Node instance "u5" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 93
+Error (12006): Node instance "u6" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 94
+Error (12006): Node instance "u7" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 95
+Error (12006): Node instance "u8" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 96
+Error (12006): Node instance "u9" instantiates undefined entity "register" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 97
+Error (12006): Node instance "u10" instantiates undefined entity "plus1" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 99
+Error (12006): Node instance "u11" instantiates undefined entity "add" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 101
+Error (12006): Node instance "u12" instantiates undefined entity "sub" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 102
+Error (12006): Node instance "u13" instantiates undefined entity "mult" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 103
+Error (12006): Node instance "u14" instantiates undefined entity "div" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 104
+Error (12006): Node instance "u15" instantiates undefined entity "bit_and" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 105
+Error (12006): Node instance "u16" instantiates undefined entity "bit_or" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 106
+Error (12006): Node instance "u17" instantiates undefined entity "bit_not" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 107
+Error (12006): Node instance "u18" instantiates undefined entity "sl" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 108
+Error (12006): Node instance "u19" instantiates undefined entity "sr" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 109
+Error (12006): Node instance "u20" instantiates undefined entity "equal" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 110
+Error (12006): Node instance "u21" instantiates undefined entity "lt" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 111
+Error (12006): Node instance "u22" instantiates undefined entity "ram" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 114
+Error (12006): Node instance "u23" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 117
+Error (12006): Node instance "u24" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 118
+Error (12006): Node instance "u25" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 119
+Error (12006): Node instance "u26" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 120
+Error (12006): Node instance "u27" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 121
+Error (12006): Node instance "u28" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 122
+Error (12006): Node instance "u29" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 123
+Error (12006): Node instance "u30" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 124
+Error (12006): Node instance "u31" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 125
+Error (12006): Node instance "u32" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 126
+Error (12006): Node instance "u33" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 127
+Error (12006): Node instance "u34" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 128
+Error (12006): Node instance "u35" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 129
+Error (12006): Node instance "u36" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 130
+Error (12006): Node instance "u37" instantiates undefined entity "tristate" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 131
+Error (12006): Node instance "u38" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 134
+Error (12006): Node instance "u39" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 135
+Error (12006): Node instance "u40" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 136
+Error (12006): Node instance "u41" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 137
+Error (12006): Node instance "u42" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 138
+Error (12006): Node instance "u43" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 139
+Error (12006): Node instance "u44" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 140
+Error (12006): Node instance "u45" instantiates undefined entity "hexdigit" File: /afs/umich.edu/user/m/c/mccabequ/engr100/lab6/top.v Line: 141
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 45 errors, 2 warnings
+    Error: Peak virtual memory: 352 megabytes
+    Error: Processing ended: Thu Feb 12 22:15:08 2015
+    Error: Elapsed time: 00:00:04
+    Error: Total CPU time (on all processors): 00:00:03
+
+
