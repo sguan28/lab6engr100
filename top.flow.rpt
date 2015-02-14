@@ -1,5 +1,5 @@
 Flow report for top
-Fri Feb 13 14:19:29 2015
+Fri Feb 13 17:56:47 2015
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 13 14:19:19 2015       ;
+; Flow Status                        ; Successful - Fri Feb 13 17:56:39 2015       ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; top                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,695 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 2,586 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 560 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 560                                         ;
+; Total logic elements               ; 2,686 / 114,480 ( 2 % )                     ;
+;     Total combinational functions  ; 2,617 / 114,480 ( 2 % )                     ;
+;     Dedicated logic registers      ; 579 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 579                                         ;
 ; Total pins                         ; 88 / 529 ( 17 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 524,288 / 3,981,312 ( 13 % )                ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/13/2015 14:18:22 ;
+; Start date & time ; 02/13/2015 17:55:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 145320950606197.142385510228814       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 145320951406933.142386814329107       ; --            ; --          ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                              ; Auto Fit      ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
@@ -95,11 +95,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 434 MB              ; 00:00:12                           ;
-; Fitter                    ; 00:00:29     ; 1.5                     ; 771 MB              ; 00:00:35                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 360 MB              ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.4                     ; 475 MB              ; 00:00:06                           ;
-; Total                     ; 00:00:56     ; --                      ; --                  ; 00:01:00                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 433 MB              ; 00:00:12                           ;
+; Fitter                    ; 00:00:27     ; 1.3                     ; 792 MB              ; 00:00:33                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 356 MB              ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 461 MB              ; 00:00:06                           ;
+; Total                     ; 00:00:52     ; --                      ; --                  ; 00:00:58                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,10 +108,10 @@ applicable agreement for further details.
 +---------------------------+-----------------------------+---------+------------+----------------+
 ; Module Name               ; Machine Hostname            ; OS Name ; OS Version ; Processor type ;
 +---------------------------+-----------------------------+---------+------------+----------------+
-; Analysis & Synthesis      ; eecs2431p18.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
-; Fitter                    ; eecs2431p18.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
-; Assembler                 ; eecs2431p18.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
-; TimeQuest Timing Analyzer ; eecs2431p18.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
+; Analysis & Synthesis      ; eecs2431p13.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
+; Fitter                    ; eecs2431p13.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
+; Assembler                 ; eecs2431p13.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
+; TimeQuest Timing Analyzer ; eecs2431p13.engin.umich.edu ; Red Hat ; 6          ; x86_64         ;
 +---------------------------+-----------------------------+---------+------------+----------------+
 
 

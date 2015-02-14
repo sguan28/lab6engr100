@@ -144,8 +144,8 @@ module control(
 	 parameter state_call1 =  8'h6a;
     parameter state_call2 =  8'h6b;
     parameter state_call3 =  8'h6c;
-    parameter state_ret1 = 8'h6d;
-    parameter state_ret2 = 8'h6e;
+    parameter state_ret1 = 	8'h6d;
+    parameter state_ret2 = 	8'h6e;
     parameter state_cpta1 =   8'h6f;
     parameter state_cpta2 =   8'h70;
     parameter state_cpta3 =  8'h71;
@@ -1026,6 +1026,55 @@ module control(
             	pc_write = 1'b1;
             	next_state = state_fetch1;
 				end
+				
+				state_cpta1: begin
+                // set address to arg1
+                arg1_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta2;
+            end
+    
+            state_cpta2: begin
+                // copy memory[arg1] and store in arg1
+                memory_drive = 1'b1;
+                arg1_write = 1'b1;
+                next_state = state_cpta3;
+            end      
+    
+            state_cpta3: begin
+                // set address to arg3
+                arg3_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta4;
+            end      
+    
+            state_cpta4: begin
+                // drive memory[arg3] to op1
+                memory_drive = 1'b1;
+                op1_write = 1'b1;
+                next_state = state_cpta5;
+            end      
+    
+            state_cpta5: begin
+                // drive arg2 to op2
+                arg2_drive = 1'b1;
+                op2_write = 1'b1;
+                next_state = state_cpta6;
+            end      
+    
+            state_cpta6: begin
+                // set adress to op1 + op2
+                add_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta7;
+            end      
+    
+            state_cpta7: begin
+                // get memory[arg1] copy and write to memory
+                arg1_drive = 1'b1; // we stored memory[arg1] in arg1
+                memory_write = 1'b1;
+                next_state = state_fetch1;
+            end 
 				
         endcase
     end
