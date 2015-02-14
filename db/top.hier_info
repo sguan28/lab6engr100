@@ -116,7 +116,7 @@ osc_50 => clock_slow[22].CLK
 osc_50 => clock_slow[23].CLK
 osc_50 => clock_slow[24].CLK
 clock_key => ~NO_FANOUT~
-clock <= clock_slow[6].DB_MAX_OUTPUT_PORT_TYPE
+clock <= clock_slow[19].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|reset_toggle:u2
@@ -7427,7 +7427,7 @@ out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|control:u46
-clock => state~2.DATAIN
+clock => state~1.DATAIN
 clock_valid => state.OUTPUTSELECT
 clock_valid => state.OUTPUTSELECT
 clock_valid => state.OUTPUTSELECT
@@ -7540,6 +7540,18 @@ clock_valid => state.OUTPUTSELECT
 clock_valid => state.OUTPUTSELECT
 clock_valid => state.OUTPUTSELECT
 clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+clock_valid => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -8229,17 +8241,17 @@ opcode_out[31] => Equal15.IN2
 opcode_out[31] => Equal16.IN1
 opcode_out[31] => Equal17.IN2
 equal_out => next_state.state_be6.DATAB
-equal_out => Selector1.IN6
+equal_out => Selector0.IN6
 equal_out => next_state.state_bne6.DATAB
-equal_out => Selector1.IN2
+equal_out => Selector0.IN2
 lt_out => next_state.state_blt6.DATAB
-lt_out => Selector1.IN3
-pc_write <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+lt_out => Selector0.IN3
+pc_write <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 pc_drive <= pc_drive.DB_MAX_OUTPUT_PORT_TYPE
-plus1_drive <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-op1_write <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
-op2_write <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
-add_drive <= add_drive.DB_MAX_OUTPUT_PORT_TYPE
+plus1_drive <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+op1_write <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+op2_write <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+add_drive <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
 sub_drive <= sub_drive.DB_MAX_OUTPUT_PORT_TYPE
 mult_drive <= mult_drive.DB_MAX_OUTPUT_PORT_TYPE
 div_drive <= div_drive.DB_MAX_OUTPUT_PORT_TYPE
@@ -8250,13 +8262,13 @@ sl_drive <= sl_drive.DB_MAX_OUTPUT_PORT_TYPE
 sr_drive <= sr_drive.DB_MAX_OUTPUT_PORT_TYPE
 opcode_write <= opcode_write.DB_MAX_OUTPUT_PORT_TYPE
 arg1_write <= arg1_write.DB_MAX_OUTPUT_PORT_TYPE
-arg1_drive <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+arg1_drive <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
 arg2_write <= arg2_write.DB_MAX_OUTPUT_PORT_TYPE
-arg2_drive <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
-arg3_write <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
-arg3_drive <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
-address_write <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+arg2_drive <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+arg3_write <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+arg3_drive <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+address_write <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 memory_write <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
-memory_drive <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+memory_drive <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -133,26 +133,25 @@ module control(
     parameter state_blt4 =   8'h5f;
     parameter state_blt5 =   8'h60;
     parameter state_blt6 =   8'h61;
-	 parameter state_cpfa1=		8'h62;
-	 parameter state_cpfa2=		8'h63;
-	 parameter state_cpfa3=		8'h64;
-	 parameter state_cpfa4=		8'h65;
-	 parameter state_cpfa5=		8'h66;
-	 parameter state_cpfa6=		8'h67;
-	 parameter state_cpfa7=		8'h68;
-	 parameter state_cpfa8=		8'h69;
-	 parameter state_call1 =  8'h6a;
-    parameter state_call2 =  8'h6b;
-    parameter state_call3 =  8'h6c;
-    parameter state_ret1 = 8'h6d;
-    parameter state_ret2 = 8'h6e;
-    parameter state_cpta1 =   8'h6f;
-    parameter state_cpta2 =   8'h70;
-    parameter state_cpta3 =  8'h71;
-    parameter state_cpta4 =  8'h72;
-    parameter state_cpta5 =  8'h73;
-    parameter state_cpta6 =  8'h74;
-    parameter state_cpta7 =  8'h75;
+    parameter state_cpfa1 =  8'h62;
+    parameter state_cpfa2 =  8'h63;
+    parameter state_cpfa3 =  8'h64;
+    parameter state_cpfa4 =  8'h65;
+    parameter state_cpfa5 =  8'h66;
+    parameter state_cpfa6 =  8'h67;
+    parameter state_cpfa7 =  8'h68;
+    parameter state_call1 =  8'h69;
+    parameter state_call2 =  8'h6a;
+    parameter state_call3 =  8'h6b;
+    parameter state_ret1 =   8'h6c;
+    parameter state_ret2 =   8'h6d;
+    parameter state_cpta1 =  8'h6e;
+    parameter state_cpta2 =  8'h6f;
+    parameter state_cpta3 =  8'h70;
+    parameter state_cpta4 =  8'h71;
+    parameter state_cpta5 =  8'h72;
+    parameter state_cpta6 =  8'h73;
+    parameter state_cpta7 =  8'h74;
 
     parameter E100_HALT =    32'h0000;
     parameter E100_ADD =     32'h0001;
@@ -305,16 +304,15 @@ module control(
                 end else if (opcode_out == E100_BNE) begin
                     next_state = state_bne1;
                 end else if (opcode_out == E100_BLT) begin
-                    next_state = state_blt1;
-						  
-					 end else if (opcode_out == E100_CPFA) begin
-                	next_state = state_cpfa1;
+                    next_state = state_blt1;				  
+		end else if (opcode_out == E100_CPFA) begin
+                    next_state = state_cpfa1;
                 end else if (opcode_out == E100_CPTA) begin
-                	next_state = state_cpta1;
+                    next_state = state_cpta1;
                 end else if (opcode_out == E100_CALL) begin
-                	next_state = state_call1;
+                    next_state = state_call1;
                 end else if (opcode_out == E100_RET) begin
-                	next_state = state_ret1;                
+                    next_state = state_ret1;                
                 end
             end 
 
@@ -930,68 +928,61 @@ module control(
                 next_state = state_fetch1;
             end 
 
-				// execute cpfa instruction
+	    // execute cpfa instruction
 				
-				state_cpfa1: begin
-				// transfer arg3 to address
-					arg3_drive = 1'b1;
-					address_write = 1'b1;
-					next_state = state_cpfa2;
-				end
+	    state_cpfa1: begin
+	    // transfer arg3 to address
+		arg3_drive = 1'b1;
+		address_write = 1'b1;
+		next_state = state_cpfa2;
+	    end
 				
-				state_cpfa2: begin
-				// transfer memory[arg3] to opcode1
-					memory_drive = 1'b1;
-					op1_write = 1'b1;
-					next_state = state_cpfa3;
-				end
+	    state_cpfa2: begin
+	    // transfer memory[arg3] to opcode1
+		memory_drive = 1'b1;
+		op1_write = 1'b1;
+		next_state = state_cpfa3;
+	    end
 				
-				state_cpfa3: begin
-				// transfer arg2 to opcode2
-					arg2_drive = 1'b1;
-					op2_write = 1'b1;
-					next_state = state_cpfa4;
-				end
+	    state_cpfa3: begin
+	    // transfer arg2 to opcode2
+		arg2_drive = 1'b1;
+		op2_write = 1'b1;
+		next_state = state_cpfa4;
+	    end
 				
-				state_cpfa4: begin
-				// transfer (opcode1 + opcode2) to arg2
-					add_drive = 1'b1;
-					arg2_write = 1'b1;
-					next_state = state_cpfa5;
-				end
+	    state_cpfa4: begin
+	    // transfer (opcode1 + opcode2) to address
+		add_drive = 1'b1;
+		address_write = 1'b1;
+		next_state = state_cpfa5;
+	    end
 				
-				state_cpfa5: begin
-				// set address to arg2
-					arg2_drive = 1'b1;
-					address_write = 1'b1;
-					next_state = state_cpfa6;
-				end
+	    state_cpfa5: begin
+	    // transfer mem[opcode1 + opcode2] to arg3
+		memory_drive = 1'b1;
+		arg3_write = 1'b1;
+		next_state = state_cpfa6;
+	    end
 				
-				state_cpfa6: begin
-				// transfer mem[arg2] to arg3
-					memory_drive = 1'b1;
-					arg3_write = 1'b1;
-					next_state = state_cpfa7;
-				end
+	    state_cpfa6: begin
+	    // transfer arg1 to adsress
+		arg1_drive = 1'b1;
+		address_write = 1'b1;
+		next_state = state_cpfa7;
+	    end
 				
-				state_cpfa7: begin
-				// transfer arg1 to adsress
-					arg1_drive = 1'b1;
-					address_write = 1'b1;
-					next_state = state_cpfa8;
-				end
+	    state_cpfa7: begin
+	    // write arg3 to memory[arg1]
+		arg3_drive = 1'b1;
+		memory_write = 1'b1;
+		next_state = state_fetch1;
+	    end
 				
-				state_cpfa8: begin
-				// write arg3 to memory
-					arg3_drive = 1'b1;
-					memory_write = 1'b1;
-					next_state = state_fetch1;
-				end
+	    // execture call instruction
 				
-				// execture call instruction
-				
-				state_call1: begin
-            	// put arg2 in the mar
+	    state_call1: begin
+            // put arg2 in the mar
             	arg2_drive = 1'b1;
             	address_write = 1'b1;
             	next_state = state_call2;
@@ -1011,10 +1002,10 @@ module control(
             	next_state = state_fetch1;
             end 
 				
-				// execute ret instruction
+	    // execute ret instruction
 				
-				state_ret1: begin
-            	// put arg1 in the address register
+	    state_ret1: begin
+            // put arg1 in the address register
             	arg1_drive  = 1'b1;
             	address_write = 1'b1;
             	next_state  = state_ret2;
@@ -1025,7 +1016,58 @@ module control(
             	memory_drive = 1'b1;
             	pc_write = 1'b1;
             	next_state = state_fetch1;
-				end
+	    end
+	
+	    // execute cpta instruction
+			
+	    state_cpta1: begin
+                // set address to arg1
+                arg1_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta2;
+            end
+    
+            state_cpta2: begin
+                // copy memory[arg1] and store in arg1
+                memory_drive = 1'b1;
+                arg1_write = 1'b1;
+                next_state = state_cpta3;
+            end      
+    
+            state_cpta3: begin
+                // set address to arg3
+                arg3_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta4;
+            end      
+    
+            state_cpta4: begin
+                // drive memory[arg3] to op1
+                memory_drive = 1'b1;
+                op1_write = 1'b1;
+                next_state = state_cpta5;
+            end      
+    
+            state_cpta5: begin
+                // drive arg2 to op2
+                arg2_drive = 1'b1;
+                op2_write = 1'b1;
+                next_state = state_cpta6;
+            end      
+    
+            state_cpta6: begin
+                // set adress to op1 + op2
+                add_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpta7;
+            end      
+    
+            state_cpta7: begin
+                // get memory[arg1] copy and write to memory
+                arg1_drive = 1'b1; // we stored memory[arg1] in arg1
+                memory_write = 1'b1;
+                next_state = state_fetch1;
+            end 
 				
         endcase
     end
