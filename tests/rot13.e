@@ -1,8 +1,8 @@
-start 		call start_init ra_init 0
+start 		call start_init ra_init
 ra_init 	be check one init_fin
-			halt 0 0 0
-check 		call start_rot13 ra_rot13 0
-ra_rot13	halt 0 0 0
+			halt
+check 		call start_rot13 ra_rot13
+ra_rot13	halt
 
 
 
@@ -45,7 +45,7 @@ start_init cpta h base i
       	add i one i
       	cpta o base i
       	cp i reset
-done_init return ra_init
+done_init ret ra_init
 
 //rot13_func
 start_rot13 cpfa holder base i
@@ -56,5 +56,7 @@ less_rot13	add holder holder thirteen
 			cpta holder rot1 i
 			add i one i
 			bne start_rot13 i five
-			cp i reset 0
-			return ra_rot13
+copy_rot13			cp i reset 
+			ret ra_rot13
+holder	.data 0
+
