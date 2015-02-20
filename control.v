@@ -143,15 +143,18 @@ module control(
     parameter state_call1 =  8'h69;
     parameter state_call2 =  8'h6a;
     parameter state_call3 =  8'h6b;
-    parameter state_ret1 =   8'h6c;
-    parameter state_ret2 =   8'h6d;
-    parameter state_cpta1 =  8'h6e;
-    parameter state_cpta2 =  8'h6f;
-    parameter state_cpta3 =  8'h70;
-    parameter state_cpta4 =  8'h71;
-    parameter state_cpta5 =  8'h72;
-    parameter state_cpta6 =  8'h73;
-    parameter state_cpta7 =  8'h74;
+    parameter state_call4 =  8'h6c;
+    parameter state_call5 =  8'h6d;
+    parameter state_call6 =  8'h6e;
+    parameter state_ret1 =   8'h6f;
+    parameter state_ret2 =   8'h70;
+    parameter state_cpta1 =  8'h71;
+    parameter state_cpta2 =  8'h72;
+    parameter state_cpta3 =  8'h73;
+    parameter state_cpta4 =  8'h74;
+    parameter state_cpta5 =  8'h75;
+    parameter state_cpta6 =  8'h76;
+    parameter state_cpta7 =  8'h77;
 
     parameter E100_HALT =    32'h0000;
     parameter E100_ADD =     32'h0001;
@@ -989,19 +992,37 @@ module control(
             end
 
             state_call2: begin
-            	// write the PC to mem[arg2]
-            	memory_write = 1'b1;
-            	pc_drive = 1'b1;
+            	// increment PC 
+            	pc_write = 1'b1;
+            	plus1_drive = 1'b1;
             	next_state = state_call3;
             end
 
             state_call3: begin
-            	// now put arg1 in the pc register
+            	// increment PC
             	pc_write = 1'b1;
-            	arg1_drive = 1'b1;
-            	next_state = state_fetch1;
+            	plus1_drive = 1'b1;
+            	next_state = state_call4;
             end 
-				
+
+    	    state_call4: begin
+            	// increment PC
+            	pc_write = 1'b1;
+            	plus1_drive = 1'b1;
+            	next_state = state_call5;
+            end	
+	   state_call5: begin
+            	// increment PC, write to mem[arg2]
+            	memory_write = 1'b1;
+            	plus1_drive = 1'b1;
+            	next_state = state_call6;
+            end 
+	   state_call6: begin
+		// drives arg 1 into PC
+	   arg1_drive = 1'b1;
+           pc_write = 1'b1;
+	   next_state = state_fetch1;
+
 	    // execute ret instruction
 				
 	    state_ret1: begin
